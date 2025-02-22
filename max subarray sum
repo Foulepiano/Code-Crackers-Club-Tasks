@@ -18,7 +18,7 @@ max_sum = -1000000000
 
 """hna c'est une boucle li gha tb9a t7ssb les elements du tableau  1 par 1 o gha tb9a la somme maximale tkbr 7ta tla9a m3a un element li ghadi isegherha ka tb9a lmax_sum stocké 7ta lprogramme il9a w7da kbr mnha
 o ila kant dik la somme courante hbtat 3la 0 ka trenitialisa a 0 bach tzad 3la lelement prochain dyl le tableau """
-"""f la boucle for st3mlt ennumerate fblast range hit c plus fluide o ma gha n7tajch ndir 2 boucles"""
+"""f la boucle for st3mlt ennumerate fblast range hit c plus fluide """
 
 for i,value in enumerate(araay):
     initial_sum += value
