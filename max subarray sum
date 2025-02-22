@@ -3,7 +3,8 @@
 elements_array = input("veuillez entrer les élements du tableau avec des éspaces entre chaque élément: ")
 
 """split: bach tferre9 dik la chaine de caractère bach i wli kula nombre bou7dou chaine de caractère"""
-"""map(int, ...):bach duk les chaines de caracteres nredhoum integers"""
+"""map(int, ...):bach duk les chaines de caracteres nredhoum integers
+la fonction map applique la fonction int a chaque élement de la liste """
 """list:bach nreje3 dakche un tableau"""
 
 araay = list(map(int, elements_array.split()))
