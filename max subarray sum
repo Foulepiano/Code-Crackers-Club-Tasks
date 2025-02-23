@@ -1,24 +1,9 @@
-"""here it's an input for choosing elemnets of the array"""
 
 elements_array = input("veuillez entrer les élements du tableau avec des éspaces entre chaque élément: ")
-
-"""split: bach tferre9 dik la chaine de caractère bach i wli kula nombre bou7dou chaine de caractère"""
-"""map(int, ...):bach duk les chaines de caracteres nredhoum integers
-la fonction map applique la fonction int a chaque élement de la liste """
-"""list:bach nreje3 dakche un tableau"""
-
 araay = list(map(int, elements_array.split()))
-
-"""hna khdit la première somme li gha tb9a tcalcula au fur et à mesure
-et le maximum dyl dik la somme du sous tableau
-3tito une valeure sghera bzzaf bach ila kan le tableau lbdaya chi nombre negatif o t7ssbat la somme ma tla9ach m3a lmaximum o ykoune le programme ghalt"""
 
 initial_sum = 0
 max_sum = -1000000000
-
-"""hna c'est une boucle li gha tb9a t7ssb les elements du tableau  1 par 1 o gha tb9a la somme maximale tkbr 7ta tla9a m3a un element li ghadi isegherha ka tb9a lmax_sum stocké 7ta lprogramme il9a w7da kbr mnha
-o ila kant dik la somme courante hbtat 3la 0 ka trenitialisa a 0 bach tzad 3la lelement prochain dyl le tableau """
-"""f la boucle for st3mlt ennumerate fblast range hit c plus fluide """
 
 for i,value in enumerate(araay):
     initial_sum += value
@@ -26,6 +11,5 @@ for i,value in enumerate(araay):
         max_sum = initial_sum
     elif initial_sum < 0:
          initial_sum = 0
-
 
 print(max_sum)
