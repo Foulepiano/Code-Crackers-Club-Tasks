@@ -5,7 +5,7 @@ araay = list(map(int, elements_array.split()))
 initial_sum = 0
 max_sum = -1000000000
 
-for i,value in enumerate(araay):
+for value in araay:
     initial_sum += value
     if initial_sum > max_sum:
         max_sum = initial_sum
