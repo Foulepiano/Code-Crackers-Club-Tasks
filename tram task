@@ -1,0 +1,60 @@
+# Affichage du message de bienvenue et du prix du ticket
+print("Hello")
+print("the price for one ticket is 6 dh")
+
+# Demande du nombre de tickets
+tickets = int(input("how many tickets you want? "))
+while tickets <= 0:
+    print("pleaz enter a valid number")
+    tickets = int(input("how many tickets you want? "))
+
+# Calcul du prix total
+price = 6*tickets
+print("the price is ", price,"dh.")
+
+# Informations sur les pièces acceptées
+print("!!! Notice you can only enter coins:1dh,2dh,5dh,10dh ")
+
+# Demande du nombre de pièces à entrer
+times_money = int(input("How many coin you will enter to pay ?"))
+while times_money <= 0: # Validation du nombre de pièces
+    print("Error. Pleaz enter a valid number")
+    times_money = int(input("How many coin you will enter to pay ?"))
+
+#calcul du montnt payé
+receipt = 0
+achat = 0
+for i in range(times_money):
+    achat = int(input(f"pleaz enter coin {i+1} (1, 2, 5, 10):"))
+    while achat != 1 and achat != 5 and achat != 10 and achat != 2: #boucle pour assurer la validité de la pièce
+        print("pleaz enter a valid coin (1, 2, 5, 10).")
+        achat = int(input(f"pleaz enter coin {i+1} (1, 2, 5, 10):"))
+    receipt += achat
+
+#calculating the change
+
+if receipt > price:
+    change = receipt - price
+    print("\nthe amount of your change is:", change,"dh.\n")
+
+    #calculating the coins of change
+    list_of_change = []
+    for i  in sorted([10, 5, 2, 1],reverse = True):
+        while change >= i:
+            list_of_change.append(i)
+            change -=  i
+
+    #affichage
+    if list_of_change:
+        print("you will receive back")
+        for i in list_of_change:
+            count  = list_of_change.count(i)
+            print(count,"coin of",i,"dh.")
+    else:
+        print("No change to give back")
+
+print("\nyou paid",receipt,"you will recieve",tickets,"tickets.")
+print("HAVE A GOOD JOURNEY:)")
+
+
+
