@@ -1,0 +1,31 @@
+print("Hello")
+print("the price for one ticket is 6 dh")
+tickets = int(input("how many tickets you want? "))
+while tickets <= 0:
+    print("pleaz enter a valid number")
+    tickets = int(input("how many tickets you want? "))
+price = 0
+for i in range(tickets):
+    price = 6*tickets
+print("the price is ", price)
+print("notice you can only enter coins:1dh,2dh,5dh,10dh ")
+times_money = int(input("how many times you have to enter a coin for buying ?"))
+while times_money <= 0:
+    print("error.pleaz enter a valid number")
+    times_money = int(input("how many times you have to enter a coin for buying ?"))
+receipt = 0
+achat = 0
+for i in range(times_money):
+    achat = int(input(f"pleaz enter coin{i+1}:"))
+
+    while achat != 1 and achat != 5 and achat != 10 and achat != 2:
+        print("pleaz enter a valid number")
+        achat = int(input(f"pleaz enter coin{i+1}:"))
+    receipt += achat
+#ba9e lia change li ghau rj3 luser + optimiser mon code ila 9dit
+"""change = 0
+lis_of_change = [1,2,5,10]
+if receipt>price:
+    change = receipt-price
+    print("the amount of youre change is:",change)"""
+print(receipt)
