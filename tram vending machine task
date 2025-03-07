@@ -1,0 +1,42 @@
+q = list(map(int, input().split()))
+list_coin = [[1, q[0]], [2, q[1]], [5, q[2]], [10, q[3]], [20, q[4]]]
+#demande de tickets et dinserer les pièces
+tickets = int(input())
+while not 1<=tickets <=100:
+    tickets = int(input())
+
+price_ticket = 6*tickets
+coins = 0
+while coins<price_ticket:
+    coins_a = int(input())
+    coins+=coins_a
+#insertion des pièces dans la machine
+    for i in range(len(list_coin)):
+        if coins == list_coin[i][0]:
+            list_coin[i].append(list_coin[i][1]+1)
+            list_coin[i].remove(list_coin[i][1])
+#calculating change
+list_change = []
+if coins == price_ticket:
+    list_change = []
+elif coins > price_ticket:
+    change = coins - price_ticket
+    for i in sorted(list_coin,reverse=True):#donner la monnaie à l'utilisateur
+        while change>= i[0] and i[1] > 0 :
+            list_change.append(i[0])
+            change -= i[0]
+            i[1]-=1   #removing the change from the machine
+    if change>0:
+        for i in sorted(list_coin,reverse=True):
+            while change>= i[0] and i[1] > 0 :
+                list_change.append(i[0])
+                change -= i[0]
+                i[1]-=1   #removing the change from the machine
+
+print(tickets)
+list_change.sort()
+print(list_change)
+print(list_coin)
+
+
+
